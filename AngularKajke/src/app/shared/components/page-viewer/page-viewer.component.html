@@ -1,0 +1,26 @@
+<div class="rich-list">
+  <div class="rich-list-header">
+    <h3>{{title}}</h3>
+    <select class="form-control" [(ngModel)]="listElementsPerPage"  (ngModelChange)="listElementsPerPage=$event;" (change) = "onSelectChange()">
+      <option [ngValue]="5">5</option>
+      <option [ngValue]="10">10</option>
+      <option [ngValue]="15">15</option>
+      <option [ngValue]="25">25</option>
+      <option [ngValue]="50">50</option>
+  </select>
+  <br style=" clear: both;">
+  </div>
+  <div class="rich-list-body">
+    <ul *ngFor="let item of currentListElements">
+      <li>{{item}}</li>
+    </ul>
+  </div>
+  <div class="rich-list-bottom">
+    <button class="common-button" (click)=" firstPage()"> &#171; </button> <!-- pierwsza strona -->
+    <button class="common-button" (click)=" previousPage()">&#8249;</button> <!-- porzednia strona -->
+    <input (change)="onInputChange()" size="1" type="number" min="1" [(ngModel)]="currentPage">
+    <strong> /{{maxPageCounter}}</strong>
+    <button class="common-button" (click)="nextPage()">&#8250;</button> <!-- nastepna strona -->
+    <button class="common-button" (click)=" lastPage()">&raquo;</button> <!-- ostatnia strona -->
+  </div>
+</div>

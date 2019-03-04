@@ -1,0 +1,22 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+        <h2>Zmień swój adres email.</h2>
+          <form id="changeEmailForm" [formGroup]="changeEmailForm" (ngSubmit)="onSubmit(changeEmailForm.value)">
+              <mat-form-field>
+                <input matInput placeholder="Podaj nowy adres email" formControlName="newEmail" required type="email">
+                <mat-error *ngIf="newEmail.hasError('required') && newEmail.touched ">
+                    Pole nie może być puste.
+                  </mat-error>
+                  <mat-error *ngIf="newEmail.hasError('email') && newEmail.touched ">
+                     Nie poprawny format adresu email.
+                   </mat-error>
+              </mat-form-field>
+              <mat-error *ngIf="errors">
+                  {{errors}}
+              </mat-error>
+              <button mat-raised-button type="submit" [disabled]="changeEmailForm.invalid || isRequesting">Zmień email</button>
+          </form>
+    </div>
+  </div>
+</div>

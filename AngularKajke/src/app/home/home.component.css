@@ -1,0 +1,11 @@
+.inner
+{
+  width: 800px;
+  text-align: center;
+}
+
+p
+{
+  font-size: 21px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

@@ -1,0 +1,6 @@
+{
+  "CertificateSettings": {
+    "FileName": "SSLCert/localhost.pfx",
+    "Password": "kajkeangular"
+  }
+}

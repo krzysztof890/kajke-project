@@ -1,0 +1,15 @@
+<ng-container *ngIf = 'isRequesting'>
+  <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf = '!isRequesting && survey !== undefined && result !== undefined'>
+  <div id="survey-results-header">
+      <h1>Wyniki dla ankiety: </h1>
+      <h1>{{survey.Name}}</h1>
+  </div>
+  <ng-container *ngFor=" let item of survey.Questions">
+    <app-show-results [question]="item" [surveyResults]="getQuestionResults(item.QuestionNumber)"></app-show-results>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf = '!isRequesting && ( survey === undefined || result === undefined )'>
+    Bład: {{ error}}
+</ng-container>

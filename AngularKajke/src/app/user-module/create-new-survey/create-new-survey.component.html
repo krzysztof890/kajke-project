@@ -1,0 +1,75 @@
+<div class="row">
+    <div clas="col-sm-8 col-xl-12">
+        <div class="floating-menu">
+            <div  class="floating-menu-header">
+              <p>Przybornik</p>
+            </div>
+            <div  class="floating-menu-body">
+                <button title="Dodaj pytanie." class="basic-icon-button add-button" (click) ='addQuestion()' [disabled] = 'isRequesting' ></button>
+                <button title="Usuń pytanie."class="basic-icon-button cancel-button" (click) ='remoweQuestion()' [disabled] = 'isRequesting'></button>
+                <div>
+                    <button class="common-button" (click) ='onSubmit()' [disabled] = 'surveyForm.invalid || isRequesting' *ngIf='!editingMode' >Utworz ankiete</button>
+                    <button class="common-button" (click) ='onSubmit()' [disabled] = 'surveyForm.invalid || isRequesting'  *ngIf='editingMode'>Edytuj ankiete</button>
+                </div>
+            </div>
+          </div>
+      <form [formGroup]="surveyForm">
+          <div id="header">
+              <div class="header-record form-group ">
+                  <label for="name">Nazwa Ankiety:</label>
+                  <textarea maxlength="{{surveyNameMmaxLength}}" appAutoResizeTextArea charactersPerLine="52" class="form-control form-control-lg"
+                  id="name" type="text" placeholder="Podaj nazwe ankiety" formControlName="Name" ></textarea>
+                  <small class="text-danger" *ngIf="Name.invalid && Name.touched" >Nazwa ankiety nie może pozostać pusta.</small>
+                </div>
+                <div class="header-record form-group">
+                  <label for="description">Opis ankiety:</label>
+                  <textarea maxlength="{{surveyDescriptionMmaxLength}}" appAutoResizeTextArea charactersPerLine="52" class="form-control form-control-lg"
+                  id="description" type="text" placeholder="Podaj opis ankiety" formControlName="Description" ></textarea>
+                  <small class="text-danger" *ngIf="Description.invalid && Description.touched" >Opis ankiety nie może pozostać pusty.</small>
+                </div>
+          </div>
+          <div formArrayName = "Questions">
+              <div *ngFor="let question of Questions.controls; let i = index " [formGroupName]="i">
+                  <div class="survey-row">
+                    <button title="Usuń pytanie."  class="basic-icon-button cancel-button delete" [disabled]="isRequesting" (click)="remoweQuestionAt(i)"></button>
+                         <div class="form-group ">
+                            <label for="question">Pytanie {{i + 1}}: </label>
+                            <textarea maxlength="{{surveyQuestionMmaxLength}}" appAutoResizeTextArea charactersPerLine="52" class="form-control form-control-lg"
+                            formControlName="Query" type="text" placeholder="Podaj treść pytania"  ></textarea>
+                            <small class="text-danger" *ngIf="question.get('Query').invalid && question.get('Query').touched" >Pytanie ankiety nie może pozostać puste.</small>
+                          </div>
+                          <div class="form-group ">
+                              <label for="answer-type">Typ odpowiedzi</label>
+                              <select formControlName="AnswerType" class="custom-select" id="answer-type" (change) = "onSelectChange(question)">
+                                <option *ngFor="let item of options | enumKeyValuelist;" [ngValue]="item.key">Typ wyboru: {{item.value}}</option>
+                              </select>
+                              <small  class="form-text text-muted">W zależności od wyboru bedzie można udzielić wyłacznie odpowiedzi tekstowej, wybrać wyłacznie jedna lub wiele z zdefiniowanych odpowiedzi podczas wypełnienia ankiety.</small>
+                          </div>
+                          <div class="form-row" style="float: right;">
+                            <label class="checkbox-container" > Pytanie opcjonalne
+                                <input id="optional" type='checkbox' formControlName="IsOptional">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                          </div>
+                      <div class="survey-body" formArrayName = "Answers">
+                          <br style="clear:both" />
+                          <div *ngFor="let answer of GetAnswers(question).controls; let j = index " [formGroupName]="j">
+                              <div class="input-group">
+                                  <textarea maxlength="{{maxLengthOfTheAnswer}}" appAutoResizeTextArea charactersPerLine="55" type="text" class="form-control" formControlName="Answer"
+                                   placeholder='Podaj treść odpowiedzi' aria-describedby="basic-addon2" rows="1"></textarea>
+                                 <div class="input-group-append">
+                                   <button title="Usuń odpowiedź." (click)="deleteAnswer(question, j)" class="cancel-button basic-icon-button"
+                                    type="button" ></button>
+                                   <button title="Dodaj odpowiedź." *ngIf="GetAnswers(question).length - 1 === j"  (click)="addAnswer(GetAnswers(question))"
+                                   class="add-button basic-icon-button" type="button" ></button>
+                                 </div>
+                                </div>
+                                <small class="text-danger" *ngIf="answer.get('Answer').invalid && answer.get('Answer').touched" >Pole odpowiedzi nie może pozostać puste.</small>
+                          </div>
+                      </div>
+                   </div>
+              </div>
+          </div>
+      </form>
+    </div>
+  </div>

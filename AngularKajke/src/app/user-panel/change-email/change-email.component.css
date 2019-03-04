@@ -1,0 +1,36 @@
+.inner
+{
+  width: 800px;
+}
+.outer
+{
+  height: 80vh;
+}
+
+#changeEmailForm
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#changeEmailForm > * {
+  width: 70%;
+}
+
+#changeEmailForm button
+{
+  width: 30%;
+}
+
+h2
+{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+mat-form-field
+{
+  margin-bottom: 7px;
+}

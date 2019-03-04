@@ -1,0 +1,8 @@
+{
+  "EmailOptions": {
+    "Email": "ankiety.kajke@gmail.com",
+    "Password": "Kajke129!",
+    "Host": "smtp.gmail.com",
+    "Port": "587"
+  }
+}

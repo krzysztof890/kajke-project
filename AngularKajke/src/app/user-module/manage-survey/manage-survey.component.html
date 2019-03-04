@@ -1,0 +1,20 @@
+<div class="mange-survey">
+  <div>
+      <h4>Nazwa Ankiety: </h4>
+      <p>{{data.name}}</p>
+  </div>
+    <div>
+      <ul>
+        <li><button class="common-button" [disabled] = 'isRequesting' (click)='editSurvey()'>Edytuj Ankiete</button></li>
+        <li><button class="common-button" [disabled] = 'isRequesting' (click)='remoweSurvey()'>Usun ankiete</button></li>
+        <li><button class="common-button" [disabled] = 'isRequesting' (click)='fillSurvey()'>Wypełnij ankiete</button></li>
+        <li><button class="common-button" [disabled] = 'isRequesting' (click)='showSurveyResult()'>Zobacz wyniki ankiety</button></li>
+        <li><button class="common-button" [disabled] = 'isRequesting' (click)='generateSurveyReport()'>Generuj raport z wynikow ankiety</button></li>
+        <li><app-send-email-invites [link]="data.link"></app-send-email-invites></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Link do ankiety: <a href="{{shareSurvey}}">Link </a></strong>
+      <div class='text-danger'>{{errorMsg}}</div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<ng-container *ngIf = 'isDownloading'>
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf = '!isDownloading && surveys.length > 0;'>
+    <ng-container *ngFor="let item  of surveys">
+      <app-manage-survey [data]= 'item' [closeHandler]='closeHandler' ></app-manage-survey>
+    </ng-container>
+</ng-container>
+<ng-container *ngIf = '!isDownloading && surveys.length === 0'>
+   Nie posiadasz w tej chwili żadnych ankiet
+</ng-container>

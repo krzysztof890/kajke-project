@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+
+     <!--kompiluje pliki typescript uzywajac angulara cli zamiast vs2017 -->
+    <TypeScriptCompilerBlocked>true</TypeScriptCompilerBlocked>
+    <!-- <PostBuildEvent>ng build - -aot</PostBuildEvent> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\Shared\**" />
+    <Compile Remove="wwwroot\Classes\**" />
+    <Content Remove="src\Shared\**" />
+    <Content Remove="wwwroot\Classes\**" />
+    <EmbeddedResource Remove="src\Shared\**" />
+    <EmbeddedResource Remove="wwwroot\Classes\**" />
+    <None Remove="src\Shared\**" />
+    <None Remove="wwwroot\Classes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="7.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.Loggly" Version="5.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="dist\" />
+    <Folder Include="e2e\" />
+    <Folder Include="wwwroot\users\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,63 @@
+<div class="outer">
+  <div class="middle">
+      <div id="survey" class="inner">
+      <ng-container *ngIf = ' isRequesting && survey !== undefined'>
+          <app-loader></app-loader>
+        </ng-container>
+        <ng-container *ngIf = 'error && survey === undefined'>
+          {{error}}
+        </ng-container>
+        <ng-container *ngIf = '!isRequesting && survey !== undefined ;'>
+           <form [formGroup]="fillSurveyForm" (submit)="onSubmit(fillSurveyForm.value)">
+              <div id = "survey-header">
+                  <h3>
+                      {{survey.Name}}
+                  </h3>
+                  <p>{{survey.Description}}</p>
+                </div>
+            <div formArrayName = "Questions">
+              <div *ngFor="let question of Questions.controls; let questionIndex = index " [formGroupName]="questionIndex">
+                <div class="question-row">
+                <p>{{ survey.Questions[questionIndex].Query}}</p>
+                <ng-container *ngIf="question.get('AnswerType').value === answerTypes.Jednokrotny">
+                    <div *ngFor="let answer of survey.Questions[questionIndex].Answers; let i = index; ">
+                        <label class="radio-container">
+                            <p>{{answer}}</p>
+                            <input  type="radio" formControlName="AnswerNumber" [value]="i+1">
+                            <span class="radio-checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="text-danger" *ngIf="question.invalid">
+                          To pytanie wymaga udzielenia odpowiedzi.
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="question.get('AnswerType').value === answerTypes.Wielokrotny">
+                      <div formArrayName = "CheckBoxes">
+                          <div *ngFor="let checkbox of getCheckboxes(questionIndex).controls ; let j = index; ">
+                              <label class="checkbox-container">
+                                <p>{{survey.Questions[questionIndex].Answers[j]}}</p>
+                                <input type="checkbox"   formControlName = "{{j}}">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                            </div>
+                      </div>
+                      <div class="text-danger" *ngIf="question.invalid">
+                          To pytanie wymaga udzielenia odpowiedzi.
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="question.get('AnswerType').value === answerTypes.Tekstowy">
+                      <textarea formControlName="AnswerResult" appAutoResizeTextArea charactersPerLine="65" class="form-control" type="text"
+                       maxlength="{{maxLengthOfTheAnswer}}" placeholder='Podaj odpowiedz' rows="1"></textarea>
+                       <div class="text-danger" *ngIf="question.invalid">
+                          To pytanie wymaga udzielenia odpowiedzi.
+                        </div>
+                    </ng-container>
+                  </div>
+              </div>
+            </div>
+            <button id="fill-survey" type="submit" class="common-button" [disabled] = 'isRequesting || fillSurveyForm.invalid'>Wypełnij ankiete</button>
+           </form>
+        </ng-container>
+      </div>
+    </div>
+  </div>

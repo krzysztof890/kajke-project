@@ -1,0 +1,15 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+        <p *ngIf="isSuccessful">
+            Twoj adres email został potwierdzony. Możesz się juz zalogować nowym adresem email!.
+          </p>
+          <p *ngIf="!isSuccessful && !errors">
+            Trwa zmienianie adresu email.
+          </p>
+          <p *ngIf="!isSuccessful && errors">
+              {{errors}}
+            </p>
+      </div>
+  </div>
+</div>

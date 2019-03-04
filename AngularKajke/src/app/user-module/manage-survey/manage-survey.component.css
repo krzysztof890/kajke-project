@@ -1,0 +1,30 @@
+.mange-survey
+{
+  margin: 1%;
+  margin-bottom: 5%;
+  border: 5px;
+  border-style: outset;
+  padding: 1%;
+}
+.mange-survey ul
+{
+  list-style: none;
+  columns: 2;
+}
+.mange-survey button
+{
+  width:300px;
+}
+
+.mange-survey p
+{
+  font-size: 24px;
+  text-align: left;
+  word-wrap: break-word;
+  font-family:monospace;
+}
+
+.mange-survey h4
+{
+  font-family: fantasy;
+}

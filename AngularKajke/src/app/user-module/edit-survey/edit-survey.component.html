@@ -1,0 +1,9 @@
+<ng-container *ngIf = ' isRequesting'>
+  <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf = '!isRequesting && survey !== undefined'>
+  <app-create-new-survey [survey]='survey' [link]='link'></app-create-new-survey>
+</ng-container>
+<ng-container *ngIf = '!isRequesting && survey === undefined'>
+    Bład: {{ error}}
+</ng-container>

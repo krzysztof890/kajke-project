@@ -1,0 +1,1 @@
+{"Name":"Dupa","Description":"DUpa","Questions":[{"Query":"Dupa","QuestionNumber":1,"AnswerType":3,"Answers":[],"IsOptional":true},{"Query":"Pika","QuestionNumber":2,"AnswerType":1,"Answers":["Tak","Nie"],"IsOptional":false},{"Query":"PIPIKI","QuestionNumber":3,"AnswerType":2,"Answers":["A","B","C","D","E"],"IsOptional":false}]}

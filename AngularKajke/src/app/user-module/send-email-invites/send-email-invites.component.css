@@ -1,0 +1,9 @@
+ul {
+  columns: 2;
+  list-style: none;
+}
+
+#invite
+{
+  width:300px;
+}

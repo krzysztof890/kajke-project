@@ -1,0 +1,14 @@
+.inner
+{
+  width: 800px;
+}
+
+#send
+{
+  float: right;
+  clear: both;
+}
+p
+{
+  text-align: center;
+}

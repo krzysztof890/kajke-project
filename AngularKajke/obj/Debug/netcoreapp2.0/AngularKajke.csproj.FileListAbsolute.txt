@@ -1,0 +1,11 @@
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\bin\Debug\netcoreapp2.0\AngularKajke.deps.json
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\bin\Debug\netcoreapp2.0\AngularKajke.runtimeconfig.json
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\bin\Debug\netcoreapp2.0\AngularKajke.runtimeconfig.dev.json
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\bin\Debug\netcoreapp2.0\AngularKajke.dll
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\bin\Debug\netcoreapp2.0\AngularKajke.pdb
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\obj\Debug\netcoreapp2.0\AngularKajke.csproj.CoreCompileInputs.cache
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\obj\Debug\netcoreapp2.0\AngularKajke.AssemblyInfoInputs.cache
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\obj\Debug\netcoreapp2.0\AngularKajke.AssemblyInfo.cs
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\obj\Debug\netcoreapp2.0\AngularKajke.dll
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\obj\Debug\netcoreapp2.0\AngularKajke.pdb
+C:\Users\krzych129\source\repos\AngularKajke\AngularKajke\obj\Debug\netcoreapp2.0\AngularKajke.csprojAssemblyReference.cache

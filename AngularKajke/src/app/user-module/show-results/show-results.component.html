@@ -1,0 +1,11 @@
+  <!-- Jesli to nie jest pytanie tekstowe -->
+<ng-container *ngIf="question.AnswerType !== 3">
+  <div class="result-row">
+    <app-doughnut-chart [title]="question.Query" [doughnutChartLabels]="question.Answers" [doughnutChartData]="results"></app-doughnut-chart>
+  </div>
+</ng-container>
+<ng-container *ngIf="question.AnswerType === 3">
+  <div class="result-row">
+    <app-page-viewer [title]="question.Query" [listElements]="surveyResults[0].answerResults"></app-page-viewer>
+  </div>
+</ng-container>

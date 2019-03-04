@@ -1,0 +1,36 @@
+#deleteAccountForm
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#deleteAccountForm > * {
+  width: 70%;
+}
+
+#deleteAccountForm button
+{
+  width: 30%;
+}
+
+.inner
+{
+  width: 900px;
+}
+.outer
+{
+  height: 80vh;
+}
+
+h2
+{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+mat-form-field
+{
+  margin-bottom: 5px;
+}

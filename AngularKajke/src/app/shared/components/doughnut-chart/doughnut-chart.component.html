@@ -1,0 +1,15 @@
+<div class="doughnut-chart">
+  <h4>{{title}}</h4>
+  <div id="legend">
+    <ng-container *ngFor=" let item of doughnutChartLabels; let i = index">
+      <p>{{i + 1}}. {{item}}</p>
+    </ng-container>
+  </div>
+  <canvas baseChart
+              [data]="doughnutChartData"
+              [options]="options"
+              [labels]="formattedLabels"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+</div>

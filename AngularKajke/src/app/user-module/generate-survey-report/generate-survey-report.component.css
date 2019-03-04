@@ -1,0 +1,52 @@
+#generateReport
+{
+  margin-bottom: 15%;
+}
+
+#row
+{
+  padding: 40px;
+}
+
+#content
+{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 40px;
+  border: 10px;
+  border-style: ridge;
+}
+
+#content h4
+{
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#content h5
+{
+  margin-top: 35px;
+  margin-bottom: 35px
+}
+
+strong
+{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+}
+
+.checkbox-container p
+{
+  font-size: 16px;
+}
+
+#choose-questions
+{
+  border-bottom: 10px;
+  border-bottom-style: double;
+  border-bottom-color:  #008CBA;
+  padding-bottom: 25px;
+}

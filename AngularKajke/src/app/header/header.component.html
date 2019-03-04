@@ -1,0 +1,28 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Kajke Ankiety</a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+        <ul *ngIf="status" class="navbar-nav mr-auto">
+            <li class="nav-item">
+               <a class="nav-link" (click)="logout()" href="/">Wyloguj {{userName}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/user/home">Tworzenie Ankiet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/settings">Ustawienia Konta</a>
+              </li>
+        </ul>
+
+          <ul *ngIf="!status" class="nav navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/register">Zajerestruj się</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/login">Zaloguj się</a>
+            </li>
+          </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,13 @@
+.inner
+{
+    width: 600px;
+}
+.outer
+{
+  height: 80vh;
+}
+p
+{
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}

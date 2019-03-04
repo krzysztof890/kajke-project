@@ -1,0 +1,201 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body
+{
+  /* background-image: url("assets/background.gif"); */
+  background-color: whitesmoke;
+}
+
+.outer
+{
+  display: table;
+  position: absolute;
+  top:1;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle
+{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p
+{
+  word-wrap: break-word;
+}
+.common-button
+{
+  background-color: #008CBA;
+  border: 6px;
+  border-color:  #008CBA;
+  border-style: groove;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.basic-icon-button
+{
+  background-size: cover;
+  background-position: center;
+  border: none;
+  padding: 20px;
+  width: 25px;
+  border-radius: 900px;
+  height: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: transparent;
+}
+.cancel-button
+{
+  background-image: url("data:image/png;base64,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");
+}
+
+.add-button
+{
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUwSURBVGhD7VrbbxRVHK5R/wPF66PBS4yX+AeYmO7MTvGWWPGFNrFIIg+aSKK8QQLdnUsREgteWmh9wIQgESVRnqRYduecgY2FB4rbiEFL0QcxoWipu92Ov2/3bMpuz3ZnZve028Yv+ZLN7rl8v509v/O7bNv/kOCFBLtPs9Ovakm2XTfdIcNmXxt93miR9Fq32CF8hjEYK6a1BrRE+jESbXbY/GcS6huOl9+4//xMz3C2sPXwL/47R64Uidd4D59hDM2ZxxzNZEmsIZZbZvj+HTGLGYbDPYjv7B+b3Xbsqm+dmvY/ycz5n2YKSxJjTBqLOZiLNeIWd7Gm2EE94mb62bjNM7rNCls+n5hzTt+Uig1DrPEWrYU1DZuf1Uz+tNiu+Xh+58hduuVa9O0Vug+O5/aemZGKaoQfnvnH7z54KYc9sBf2FNs3B+126sG4w89t6PNyO09el4poJnec/NPHXuQgmN577gEhozEYSW89GTH1xoEL/+5L3ZJurIJ7UzP+RtqTzs4UNAg50aAl3UfoPPy1afBi7oCXl26okvtpz66B8Rw0QIuQFQ70TTyMb6N7YDz/8dn6nkgVsXfXwMU8echfN/S6Dwl5wfDcZ5m74T3wc1qJJ1FNaIAWejL89aNH7xQy68Mgj4HDtpxnoh5xZqBJs1lSyFwaMSf1DNxfo97p+KWCz6/OV/CbrHxsUMKbQVvcYU8JuTVANzbcLHy5bKEwhPBqjP0+Lx0bhtBGPzFPKJYjnmQduF2bcdmpMgSXJjTqVloXshcDh2nL8MScbIGwVGUIuHk4O0daXSG7EvEEfwLBWzNiJ1ClIfbITZwVXxo1I7bp7D8/K5sYhSoNATv7f5ylVKBXyF8AcgOE1bJJUajakPe+nETuMyHkl4BsDYkO8gnZpChUbYh56oYPzfHE6L3CDIqpKPVE1hYkKQpK1YZAawcyTZu9LMxAcMi2IwWVTYhK1YaAdKZn6Gx/IMzAQWeHyKUVZIOrKbuxZfztxmJDpqblY6sZNALooatCs9igMINiK5ufQHFANria2Eg1gj65rV9cplyfHRdmkMfq46ffPXJFOriarWQINNPZHhFmrCFD1sxPK8xhP5GdL25Uj9emharb8MffJZH1+O1EMEN6hrKVhx3ut3MVut/XPhq7Vel+Tf7KarwQKY/Px0z3JWEGZYV96XW47lHGlE2KQtWGJL8vhSgv7sncI8woYTUGjaQ5K+QvAFVxFJRlk6JQtSF0PmY1y90t5C+g3WKPr7bEqmYFEqkuquKyyWGp0pDN5HbpoKeF7MVAfwKJPRJ82QJhqMqQPaOi+GC67UK2HKgwtnI5qGtwPBe3OBdya6NcoEMxTLZQUMoigKA3di3u+K5UoIsl0k8KuUsjZnIT5UmUKWULrgT3oWTqeLmYLSk41AI6RTj4rVTERq+EfvZuqCI2gLYCSvko6a90W2HTYKmtUFFoCINyowfNFjRdZBupZLnRQ0/ieuRGTxnF1pvFp/Bol/PMlFtvhsMmGzaiDDQk0ZiEA2jUmwUhvFO5GdrhePcLGc0BHAC8Gdwf7hlcTDIRjRBr4p7AHprNdzW9PX070GShc+PhdkVVvBmxGWInrIU1Ddtjge+JZgD9CTo7LoI3RKLbjk0Wy5hBkjOMQT6BUBxzsQZip7phh0qgtI9wGgVlJDrI2lABfHPopwKKA+U/1bx9+LKP9/AZxmAs8gnNdHfpdupRsVxrAJkmUk8S+T6KArrNvyIDR8l9/oDX9P4APsOYyHfC2kZb23/9KtOnPbnZrwAAAABJRU5ErkJggg==");
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkbox-checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox-checkmark {
+  background-color: green;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+ top: 9px;
+left: 9px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: white;
+}

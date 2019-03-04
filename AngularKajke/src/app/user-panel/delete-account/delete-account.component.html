@@ -1,0 +1,19 @@
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+        <h2>Usuń swoje konto.</h2>
+        <form id="deleteAccountForm" [formGroup]="deleteAccountForm" (ngSubmit)="onSubmit(deleteAccountForm.value)">
+          <mat-form-field>
+            <input matInput placeholder="Podaj swoje hasło" formControlName="password" required type="password">
+            <mat-error *ngIf="password.hasError('required') && password.touched ">
+                Pole nie może być puste.
+              </mat-error>
+          </mat-form-field>
+          <mat-error *ngIf="errors">
+            {{errors}}
+          </mat-error>
+          <button mat-raised-button type="submit" [disabled]="deleteAccountForm.invalid || isRequesting">Usuń swoje konto</button>
+        </form>
+    </div>
+  </div>
+</div>

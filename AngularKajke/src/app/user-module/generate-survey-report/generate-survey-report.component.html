@@ -1,0 +1,46 @@
+<ng-container *ngIf = 'isRequesting'>
+  <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf = '!isRequesting && survey !== undefined && result !== undefined'>
+  <div id="row">
+      <h3>Generuj raport dla {{survey.Name}}</h3>
+      <div>
+          <strong >Wybierz pytania ktore maja byc uzwglednione w raporcie</strong>
+          <div id="choose-questions">
+            <ng-container *ngFor="let item of survey.Questions">
+              <label class="checkbox-container" > <p>{{item.Query}}</p>
+                  <input type="checkbox" (change)="onCheckboxChange(item)">
+                  <span class="checkbox-checkmark"></span>
+              </label>
+            </ng-container>
+          </div>
+      </div>
+      <div id="content" #content>
+        <h4>Raport dla Ankiety:</h4>
+        <h4>{{survey.Name}}</h4>
+        <ng-container *ngFor="let question of questionToReport">
+          <div>
+            <h5>{{question.Query}}</h5>
+              <ng-container *ngIf="question.AnswerType !== 3">
+                <p>W sumie na pytanie udzielono {{geTotalQuestionScore(question)}} odpowiedzi.</p>
+                <ng-container *ngFor="let answer of question.Answers; let i = index">
+                  <p> {{answer}}</p>
+                  <p> Udzielono {{getScore(question.QuestionNumber, i + 1)}} odpowiedzi.</p>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="question.AnswerType === 3">
+                <p>Łącznie na pytanie udzielono {{geTotalQuestionScore(question)}} odpowiedzi.</p>
+                <ng-container *ngFor="let answer of getAnswers(question.QuestionNumber)">
+                  <p> {{answer}} </p>
+              </ng-container>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <button id="generateReport" class="common-button" (click)="generateReport()">Pobierz PDF</button>
+      <button id="generateReport" class="common-button" (click)="generateExelReport()">Pobierz Exel</button>
+  </div>
+</ng-container>
+<ng-container *ngIf = '!isRequesting && ( survey === undefined || result === undefined )'>
+    Bład: {{ error}}
+</ng-container>
