@@ -1,6 +1,6 @@
 # Hello Everyone.
 
-I am a Polish graduate  from the Kazimierz Wielki University in the field of computer science. I created this repository for employers who want review my code.This is my first bigger project and also my diploma work.This is simple web app who allows create surveys. The application has not been completed yet
+I am a Polish graduate  from the Kazimierz Wielki University in the field of computer science. I created this repository for employers who want review my code.This is my first bigger project. This is simple web app who allows create surveys. The application has not been completed yet
 
 ## Technology:
   - Asp.net core 2.0
